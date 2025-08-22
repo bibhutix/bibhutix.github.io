@@ -158,6 +158,29 @@ nav ul li a:hover {
   box-shadow: 0 0 12px red, 0 0 18px blue;
 }
 
+/* Mobile Navbar */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    width: 100%; /* full width on mobile */
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+}
 
 
 
@@ -243,24 +266,42 @@ section {
 }
 
 /* Resume Button */
+#resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px; /* space around */
+}
+
 .btn {
   background: linear-gradient(135deg, rgba(255,0,0,0.9), rgba(5, 5, 110, 0.9));
-  padding: 10px 20px;
+  padding: 12px 24px;
   color: #fff;
   border-radius: 15px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
-  transition: all 0.1s ease-in-out;
-  margin: 403px;
+  transition: all 0.2s ease-in-out;
+  margin: 20px 0; /* smaller margin */
   
   /* Blur glow effect */
   box-shadow: 
-    0 0 15px rgba(255,0,0,0.7),
-    0 0 20px rgba(4, 4, 104, 0.7),
-    0 0 40px rgba(255,0,0,0.6);
+    0 0 10px rgba(255,0,0,0.7),
+    0 0 15px rgba(4, 4, 104, 0.7),
+    0 0 25px rgba(255,0,0,0.6);
 }
+
+/* Button adjusts on smaller screens */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
 
 .btn:hover {
   transform: scale(1.05);
