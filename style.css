@@ -48,6 +48,34 @@
   color: #ddd;
   margin-top: 10px;
 }
+.about-list {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 950px;
+  padding-left: 35px;
+  color: #ddd;
+  font-size: 17px;
+  line-height: 1.5;    /* tighter spacing */
+}
+
+.about-list li {
+  margin-bottom: 6px;  /* less gap between bullets */
+  list-style: none;
+  position: relative;
+  padding-left: 22px;
+}
+
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ff4d4d;  
+  text-shadow: 0 0 5px #ff0000, 0 0 8px #00f;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
 
 #skills {
   padding: 40px 20px;
