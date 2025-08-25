@@ -119,28 +119,30 @@ nav {
   justify-content: space-between; /* logo left, links right */
   align-items: center;
   background: rgba(20, 19, 19, 0.9);
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
-  width: 95%; /* stretch full width */
-  z-index: 1000; /* keep it on top */
+  width: 100%; /* full width */
+  z-index: 1000;
+  flex-wrap: wrap; /* allow wrapping if needed */
 }
 
 /* Logo */
 nav .logo {
   color: #cc2323;
-  font-size: 40px;
+  font-size: 28px; /* smaller for mobile */
   font-weight: bold;
   margin: 0;
+  white-space: nowrap; /* don’t break */
 }
 
-/* Navigation menu */
+/* Nav Menu */
 nav ul {
   list-style: none;
   display: flex;
-  text-align: left;
-  gap: 15px;
+  flex-wrap: wrap; /* keep horizontal but allow wrapping if too small */
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -149,14 +151,32 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 8px 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 16px;
 }
 
 nav ul li a:hover {
   transform: perspective(200px) translateZ(20px);
   box-shadow: 0 0 12px red, 0 0 18px blue;
 }
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.6rem 0.8rem;
+  }
+
+  nav .logo {
+    font-size: 22px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
 
 /* Mobile Navbar */
 @media (max-width: 768px) {
